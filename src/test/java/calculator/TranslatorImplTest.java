@@ -24,6 +24,19 @@ public class TranslatorImplTest {
         String response = translator.translate(from, to, "Hello World");
         System.out.println(response);
         Assert.assertEquals(response, "Hola Mundo");
+
+        to.setId("FR");
+        to.setName("Frances");
+        String response2 = translator.translate(from, to, "Hello World");
+        System.out.println(response2);
+        Assert.assertEquals(response2, "Bonjour le monde");
+
+        to.setId("RU");
+        to.setName("Ruso");
+        String response3 = translator.translate(from, to, "Hello World");
+        System.out.println(response3);
+        Assert.assertEquals(response3, "Привет мир");
+
     }
 
 
