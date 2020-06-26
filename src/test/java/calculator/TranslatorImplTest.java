@@ -22,6 +22,7 @@ public class TranslatorImplTest {
     @Test(invocationCount = 100, threadPoolSize = 5)
     public void testTranslateDummy() throws Exception {
         String response = translator.translate(from, to, "Hello World");
+        System.out.println(response);
         Assert.assertEquals(response, "Hola Mundo");
     }
 
