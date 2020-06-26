@@ -1,5 +1,6 @@
 package calculator;
 
+import calculator.business.Calculadora;
 import calculator.business.Translator;
 import calculator.business.TranslatorImpl;
 import calculator.entities.Language;
@@ -39,5 +40,30 @@ public class TranslatorImplTest {
 
     }
 
+    @Test(invocationCount = 10, threadPoolSize = 5)
+    public void testCalculadora() throws Exception{
+        int response;
+        double response2;
+
+        response = Calculadora.suma(Integer.MAX_VALUE, 2);
+        System.out.println(response);
+        Assert.assertEquals(response, 5);
+
+        response = Calculadora.resta(3, 2);
+        System.out.println(response);
+        Assert.assertEquals(response, 1);
+
+        response = Calculadora.multiplicacion(3, 2);
+        System.out.println(response);
+        Assert.assertEquals(response, 6);
+
+        response2 = Calculadora.division(3.0, 2.0);
+        System.out.println(response2);
+        Assert.assertEquals(response2, 1.5);
+
+        response = Calculadora.potencia(3, 2);
+        System.out.println(response);
+        Assert.assertEquals(response, 9);
+    }
 
 }
